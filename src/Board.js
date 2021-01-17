@@ -33,7 +33,7 @@ class Board extends Component {
   static defaultProps = {
     nrows: 5,
     ncols: 5,
-    chanceLightStartsOn: 0.25
+    chanceLightStartsOn: 0.50
   };
   constructor(props) {
     super(props);
@@ -83,7 +83,7 @@ class Board extends Component {
 
     // win when every cell is turned off
     // TODO: determine is the game has been won
-    let hasWon = board.every(row => row.every(cell => !cell));
+    let hasWon = board.every(row => row.every(cell => !cell ));
 
     this.setState({ board: board, hasWon: hasWon });
   }
@@ -128,6 +128,7 @@ class Board extends Component {
             {this.makeTable()}
           </div>
         )}
+        <p>created by <em>taica_rullz</em></p>
       </div>
     );
   }
